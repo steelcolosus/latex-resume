@@ -1,0 +1,305 @@
+\RequirePackage{etex}
+\documentclass{ExpressiveResume}
+
+% ----- Resume -----
+\begin{document}
+
+% ----- Name + Contact Information -----
+\resumeheader[
+    firstname=Eduardo Alejandro Aviles Jimenez,
+    email=eduardo.avilesj@gmail.com,
+    phone=3996-5277,
+    linkedin=eduardoavilesj,
+    github=steelcolosus,
+    city=Zone 10,
+    state=Guatemala,
+    % qrcode=./images/qr.png,
+    fixobjectivespacing=true
+]
+\begin{flushleft}
+    Full-Stack Software Engineer with expertise in front-end, back-end, and Machine Learning technologies.
+    Passionate about leveraging ML DevOps and CI/CD pipelines to drive innovation and efficiency. 
+    Proven track record of developing AI-driven solutions that align with business goals. 
+    Creative problem-solver excelling in collaborative and cross-functional environments.
+\end{flushleft}
+
+% ----- Education -----
+\section{Education}
+
+\experience
+{}
+{Systems Engineering}
+{Jan 2005}{Sept 2011}
+{
+    \noindent Universidad De San Carlos De Guatemala 
+}
+\vspace{8pt}
+
+% ----- Work Experience -----
+\section{Work Experience}
+
+\experience
+{Machine Learning Engineer}
+{LoanPro}
+{Jun 2022}{Present}
+{
+    \achievement{
+        Implemented a Loan Creation Monitor, cluster user behavior, and identify anomalies, 
+        improving tenant targeting.
+    }
+    \achievement{
+    Developed an anomaly detection system that reduced tenant noise data by 25\%, 
+    filtering irrelevant events allowing the business to focus on critical insights.
+    }
+    \achievement{
+        Created per-tenant smart threshold calculation, considering data distribution, 
+        multiple modes, skewness, and kurtosis, optimizing sensitivity for better decision-making.
+    }
+    \achievement{
+        Built automated model workflows with continuous training (CT) and model validation 
+        to monitor online model performance, preventing model degradation.
+    }
+    \achievement{
+        Developed a custom data pipeline for training and inference, 
+        using ECS and Fargate for scalability and reliability.
+    }
+    \achievement{
+        Implemented a custom LLM AI  assistant to summarize and analyze loan data and provide insights and recommendations,
+    }
+}
+\experience
+{Senior Software Engineer}
+{BairesDev - HipTrain}
+{Aug 2021}{Jun 2022}
+{
+    \achievement{
+        Led infrastructure, architecture, and CI/CD pipelines for back-end and front-end solutions, 
+        improving deployment times by 30\%.
+    }
+    \achievement{
+        Developed scheduling and reservation core system for training classes, 
+        improving schedulingby 80\%.
+    }
+    \achievement{
+        Built custom generic calendar invite logic for scheduling, improving integration and user convenience.
+    }
+    \achievement{
+        Implemented a chatbot using Amazon Lex, which automated 40\% 
+        of customer inquiries and improved user interaction efficiency.
+    }
+    \achievement{
+        Led and managed back-end and infrastructure projects, 
+        ensuring scalable architecture and seamless integration with existing systems.
+    }
+}
+\experience
+{BI/ML Developer}
+{LogMeIn}
+{Apr 2016}{Dec 2021}
+{
+    \achievement{
+        Developed infrastructure and architecture of core internal tools for data integration and ETL with multiple data sources, improving data processing capabilities.
+    }
+    \achievement{
+        Built microservices to support custom ETL solutions, enhancing scalability and reliability.
+    }
+    \achievement{
+        Implemented machine learning algorithms for internal product enhancements, leading to a 20\% increase in prediction accuracy.
+    }
+    \achievement{
+        Developed a Twitter sentiment analysis tool for live tweet extraction and data streaming, which provided valuable insights for marketing and customer service teams.
+    }
+}
+\experience
+{Senior Software Developer}
+{SSNAPP (Social Media Gateways)}
+{Sep 2014}{Apr 2016}
+{
+    \achievement{
+        Led and managed the transition from monolithic architecture to microservices using Netflix OSS, increasing system scalability by 50\% and reducing downtime during peak usage by 20%
+    }
+    \achievement{
+        Led a team of engineers to optimize back-end infrastructure and implement cutting-edge AWS solutions, reducing infrastructure costs by 30\%.
+    }
+}
+\vspace{8pt}
+% ----- Skills -----
+\section{Skills}
+\begin{itemize}
+    \item \textbf{Languages:} Java, Python, TypeScript, JavaScript
+    \item \textbf{Libs/Frameworks:} Node.js, React, SolidJS, SolidStart, NestJS, Spring Boot, FastAPI, Django, Flask, Nameko
+    \item \textbf{Machine Learning:} Scikit-Learn, TensorFlow,Keras, MLFlow, Pandas, DVC, Weights\& Biases, LlamaIndex
+    \item \textbf{Cloud and DevOps:} AWS , Docker, Kubernetes, Terraform, Jenkins, CloudFormation, Ansible, GitHub Actions, Heroku
+    \item \textbf{Databases:} PostgreSQL, Redis, RethinkDB, DynamoDB, Redshift
+    \item \textbf{Other Tools:} Git, RabbitMQ, Netflix OSS
+\end{itemize}
+
+\pagebreak
+% ------ Certifications -----
+\section{Awards and Certificates}
+
+\experience
+{First Place}
+{Hackathon/LoanPro}
+{}{Apr 2024}
+{
+    \achievement{
+        Loan monitoring system that utilized clustering and anomaly detection techniques to improve tenant targeting.
+    }
+}
+
+\experience
+{First Place}
+{Hackathon/LogMeIn}
+{}{Jul 2018}
+{
+    \achievement{
+        Created an LSTM-based neural network to predict customer churn, 
+        leveraging advanced recurrent neural network architectures to solve critical business problems related to customer retention.
+        Also voted as developers' choice.
+    }
+}
+\experience
+{\certificate{Machine Learning DevOps Engineer}{https://www.udacity.com/certificate/e/f46ae562-cec7-11ed-b982-8f5005d0f612}}
+{Nano Degree}
+{Jan 2022}{Apr 2022}
+{
+    \achievement{
+        Implement production-ready machine learning pipelines, automate data workflows with \tech{CI/CD}, use tools like \tech{FastAPI}, \tech{MLFlow}, \tech{Weights\&Biases}, and track model performance to prevent model degradation.
+    }
+}
+\experience
+{Cloud DevOps Engineer}
+{Nano Degree}
+{Jul 2019}{Aug 2020}
+{
+    \achievement{
+        Deploy and maintain infrastructure as code (IaC) securely using \tech{CloudFormation} and \tech{Ansible}, create \tech{CI/CD} pipelines with \tech{Jenkins}, and operationalize scalable microservices with \tech{Kubernetes}.
+    }
+}
+\experience
+{Artificial Intelligence Nanodegree}
+{Nano Degree}
+{Jan 2018}{Jul 2018}
+{
+    \achievement{
+        AI algorithms, search optimization, planning, and pattern recognition.
+    }
+}
+\experience
+{\certificate{Deep Learning Nanodegree}{https://www.udacity.com/certificate/e/67cab9d0-b612-11e7-b918-cbf0cf6d0985}}
+{Nano Degree}
+{Jul 2017}{Aug 2017}
+{
+    \achievement{         
+        Built and deployed models for image classification, sentiment analysis, and face generation,
+        using neural networks, convolutional neural networks (CNNs), recurrent neural networks (RNNs), 
+        and generative adversarial networks (GANs).
+    }
+}
+\vspace{8pt}
+
+% ----- Technical Projects -----
+\section{Technical Projects}
+
+\experience
+{\faIcon{lock} Loan Monitoring System}
+{LoanPro}
+{Jan 2024}{Present}
+{
+    \achievement{
+    Designed and deployed a system to monitor loan creation, 
+    cluster user behavior, and identify anomalies, using \tech{MLFlow}, \tech{Python}, \tech{Pandas}, and \tech{Scikit-learn}. Structured data pipeline for Training and Inference with \tech{ECS} and \tech{Fargate} for scalability and reliability.
+    }
+}
+\experience
+{\faIcon{lock} Sentiment Analysis on Twitter}
+{LogMeIn}
+{Jan 2024}{Present}
+{
+    \achievement{
+        Created a real-time sentiment analysis tool for social media, allowing for better-informed marketing campaigns and customer service responses.
+    }
+}
+\experience
+{\repository{Predict Customer Churn}{https://github.com/steelcolosus/ml-devops-predict-customer-churn}}
+{Personal}
+{Jan 2024}{Apr 2024}
+{
+    \achievement{
+        Implemented a Python package to predict customer churn, 
+        adhering to PEP8 standards, and incorporating best practices for modularity, documentation, and testing.
+    }
+}
+\experience
+{\repository{ML Pipeline for Rental Price Prediction}{https://github.com/steelcolosus/ml-devops-build-ml-pipeline-for-short-term-rental-prices}}
+{Personal}
+{Jan 2024}{Apr 2024}
+{
+    \achievement{
+        Developed an end-to-end machine learning pipeline for short-term rental price prediction in NYC, 
+        including data fetching, validation, training, and deployment, automating retraining on a weekly basis.
+    }
+}
+\experience
+{\repository{Dynamic Risk Assessment System}{https://github.com/steelcolosus/ML_DevOps_NG/tree/master/project_dynamic_risk_assesment}}
+{Personal}
+{Jan 2024}{Apr 2024}
+{
+    \achievement{
+        Set up automated processes to ingest data, score, re-train, and re-deploy ML models for risk assessment, ensuring models remained accurate and up-to-date.
+    }
+}
+\experience
+{\repository{Face Generation using GANs}{https://github.com/steelcolosus/face.generation}}
+{Personal}
+{Jan 2017}{Apr 20217}
+{
+    \achievement{
+        Built and trained a custom GAN architecture on the CelebA dataset to generate realistic human faces, utilizing advanced techniques like DCGAN, CycleGAN, and StyleGAN.
+    }
+}
+\vspace{8pt}
+
+
+% ----- Technical Projects -----
+\section{Speaking Engagements}
+
+\experience
+{Neural Network from scratch}
+{FaceBook dev Circles, Guatemala}
+{}{March 2019}
+{
+    \achievement{
+        Discussed how to implement a neural network without external ML libraries, showcasing fundamental AI concepts with raw Python.
+    }
+}
+\experience
+{RNNs and Sequence to Sequence Model}
+{FaceBook dev Circles, Guatemala}
+{}{Oct 2018}
+{
+    \achievement{
+        How to implement a custom RNN-based model to generate fake threads of posts and comments, trained on a dataset from the "Velocidad Maxima" website.
+    }
+}
+\experience
+{Neural Machine Translation}
+{Mayan Linguistic Conference, Guatemala}
+{}{Jul 2018}
+{
+    \achievement{
+        Presented on the evolution of text translation and the potential use of neural translation models to translate Mayan dialects, exploring language preservation techniques.
+    }
+}
+\experience
+{Generative Adversarial Networks ( GAN )}
+{Google IO Extended, Guatemala}
+{}{May 2018}
+{
+    \achievement{
+        Delivered a keynote on the implementation of Generative Adversarial Networks (GANs) for generating fake facial images, demonstrating the versatility of GANs in various applications.
+    }
+}
+
+\end{document}
