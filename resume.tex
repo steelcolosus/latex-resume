@@ -8,27 +8,27 @@
 \resumeheader[
     firstname=Eduardo Alejandro Aviles Jimenez,
     email=eduardo.avilesj@gmail.com,
-    phone=3996-5277,
+    phone=(+502) 3996-5277,
     linkedin=eduardoavilesj,
     github=steelcolosus,
-    city=Zone 10,
+    % city=Zone 10,
     state=Guatemala,
     % qrcode=./images/qr.png,
     fixobjectivespacing=true
 ]
 \begin{flushleft}
-    Full-Stack Software Engineer with expertise in front-end, back-end, and Machine Learning technologies.
-    Passionate about leveraging ML DevOps and CI/CD pipelines to drive innovation and efficiency. 
-    Proven track record of developing AI-driven solutions that align with business goals. 
-    Creative problem-solver excelling in collaborative and cross-functional environments.
+    Machine Learning Engineer with 9+ years of experience spanning full-stack development, data engineering, and AI/ML solutions across financial services, social media, and enterprise applications.
+    Expert in building end-to-end ML pipelines, deep learning, NLP, computer vision, and predictive analytics.
+    Proven leader in architecting scalable cloud infrastructure and DevOps practices that reduce operational costs by 30\%.
+    Strong background in technical innovation and business impact, delivering production-ready AI solutions with regulatory compliance.
 \end{flushleft}
 
 % ----- Education -----
 \section{Education}
 
 \experience
-{}
-{Systems Engineering}
+{Engineering Degree}
+{Computer Systems Engineering}
 {Jan 2005}{Sept 2011}
 {
     \noindent Universidad De San Carlos De Guatemala 
@@ -64,7 +64,16 @@
         using ECS and Fargate for scalability and reliability.
     }
     \achievement{
-        Implemented a custom LLM AI  assistant to summarize and analyze loan data and provide insights and recommendations,
+        Implemented a custom LLM AI assistant to summarize and analyze loan data and provide insights and recommendations.
+    }
+    \achievement{
+        Developed Risk Radar project using \tech{XGBoost} to predict loan delinquency across 3-month windows, creating comprehensive risk scores that align with IFRS 9 regulatory requirements for Expected Credit Loss (ECL) provisioning.
+    }
+    \achievement{
+        Built predictive models calculating probability-weighted risk scores across three delinquency stages (Current, Early/Severe Delinquency, Default), enabling proactive risk management and reducing potential losses by identifying high-risk loans before default.
+    }
+    \achievement{
+        Created Risk Radar dashboard with tenant risk leaderboard and early warning alerts, improving portfolio oversight and enabling data-driven decision making for loan servicing teams.
     }
 }
 \experience
@@ -78,7 +87,7 @@
     }
     \achievement{
         Developed scheduling and reservation core system for training classes, 
-        improving schedulingby 80\%.
+        improving scheduling by 80\%.
     }
     \achievement{
         Built custom generic calendar invite logic for scheduling, improving integration and user convenience.
@@ -98,16 +107,13 @@
 {Apr 2016}{Dec 2021}
 {
     \achievement{
-        Developed infrastructure and architecture of core internal tools for data integration and ETL with multiple data sources, improving data processing capabilities.
+        Developed infrastructure for data integration and ETL with multiple sources, improving data processing capabilities.
     }
     \achievement{
-        Built microservices to support custom ETL solutions, enhancing scalability and reliability.
+        Built microservices for custom ETL solutions, enhancing scalability and reliability.
     }
     \achievement{
-        Implemented machine learning algorithms for internal product enhancements, leading to a 20\% increase in prediction accuracy.
-    }
-    \achievement{
-        Developed a Twitter sentiment analysis tool for live tweet extraction and data streaming, which provided valuable insights for marketing and customer service teams.
+        Implemented ML algorithms for product enhancements, leading to 20\% increase in prediction accuracy.
     }
 }
 \experience
@@ -116,22 +122,23 @@
 {Sep 2014}{Apr 2016}
 {
     \achievement{
-        Led and managed the transition from monolithic architecture to microservices using Netflix OSS, increasing system scalability by 50\% and reducing downtime during peak usage by 20%
+        Led transition from monolithic architecture to microservices using Netflix OSS, increasing system scalability by 50\% and reducing downtime by 20\%.
     }
     \achievement{
-        Led a team of engineers to optimize back-end infrastructure and implement cutting-edge AWS solutions, reducing infrastructure costs by 30\%.
+        Optimized back-end infrastructure and implemented AWS solutions, reducing infrastructure costs by 30\%.
     }
 }
 \vspace{8pt}
 % ----- Skills -----
 \section{Skills}
 \begin{itemize}
-    \item \textbf{Languages:} Java, Python, TypeScript, JavaScript
-    \item \textbf{Libs/Frameworks:} Node.js, React, SolidJS, SolidStart, NestJS, Spring Boot, FastAPI, Django, Flask, Nameko
-    \item \textbf{Machine Learning:} Scikit-Learn, TensorFlow,Keras, MLFlow, Pandas, DVC, Weights\& Biases, LlamaIndex
-    \item \textbf{Cloud and DevOps:} AWS , Docker, Kubernetes, Terraform, Jenkins, CloudFormation, Ansible, GitHub Actions, Heroku
+    \item \textbf{Languages:} Python, Java, TypeScript, JavaScript, SQL
+    \item \textbf{Frameworks:} Node.js, React, SolidJS, SolidStart, NestJS, Spring Boot, FastAPI, Django, Flask, Nameko
+    \item \textbf{Machine Learning:} XGBoost, Scikit-Learn, TensorFlow, Keras, MLFlow, Pandas, DVC, Weights\& Biases, LlamaIndex
+    \item \textbf{Cloud \& DevOps:} AWS (ECS, Fargate, Lambda), Docker, Kubernetes, Terraform, Jenkins, CloudFormation, Ansible, GitHub Actions
     \item \textbf{Databases:} PostgreSQL, Redis, RethinkDB, DynamoDB, Redshift
-    \item \textbf{Other Tools:} Git, RabbitMQ, Netflix OSS
+    \item \textbf{Risk \& Compliance:} IFRS 9, Expected Credit Loss (ECL), Regulatory Reporting, Risk Modeling
+    \item \textbf{Other Tools:} Git, RabbitMQ, Netflix OSS, Amazon Lex
 \end{itemize}
 
 \pagebreak
@@ -140,7 +147,17 @@
 
 \experience
 {First Place}
-{Hackathon/LoanPro}
+{Hackathon/LoanPro - Risk Radar}
+{}{Jan 2025}
+{
+    \achievement{
+        Risk Radar: Advanced loan delinquency prediction system using XGBoost with IFRS 9 compliance, featuring probability-weighted risk scoring and automated portfolio monitoring dashboard.
+    }
+}
+
+\experience
+{First Place}
+{Hackathon/LoanPro - Loan Monitoring System}
 {}{Apr 2024}
 {
     \achievement{
@@ -165,7 +182,7 @@
 {Jan 2022}{Apr 2022}
 {
     \achievement{
-        Implement production-ready machine learning pipelines, automate data workflows with \tech{CI/CD}, use tools like \tech{FastAPI}, \tech{MLFlow}, \tech{Weights\&Biases}, and track model performance to prevent model degradation.
+        Production-ready ML pipelines, automated workflows with \tech{CI/CD}, \tech{FastAPI}, \tech{MLFlow}, \tech{Weights\&Biases}, and model performance tracking.
     }
 }
 \experience
@@ -174,7 +191,7 @@
 {Jul 2019}{Aug 2020}
 {
     \achievement{
-        Deploy and maintain infrastructure as code (IaC) securely using \tech{CloudFormation} and \tech{Ansible}, create \tech{CI/CD} pipelines with \tech{Jenkins}, and operationalize scalable microservices with \tech{Kubernetes}.
+        Infrastructure as code (IaC) with \tech{CloudFormation} and \tech{Ansible}, \tech{CI/CD} pipelines with \tech{Jenkins}, and \tech{Kubernetes} microservices.
     }
 }
 \experience
@@ -192,9 +209,7 @@
 {Jul 2017}{Aug 2017}
 {
     \achievement{         
-        Built and deployed models for image classification, sentiment analysis, and face generation,
-        using neural networks, convolutional neural networks (CNNs), recurrent neural networks (RNNs), 
-        and generative adversarial networks (GANs).
+        Image classification, sentiment analysis, and face generation using CNNs, RNNs, and GANs.
     }
 }
 \vspace{8pt}
@@ -203,22 +218,27 @@
 \section{Technical Projects}
 
 \experience
-{\faIcon{lock} Loan Monitoring System}
+{\faIcon{lock} Risk Radar - Loan Delinquency Prediction System}
 {LoanPro}
-{Jan 2024}{Present}
+{Jan 2025}{Present}
 {
     \achievement{
-    Designed and deployed a system to monitor loan creation, 
-    cluster user behavior, and identify anomalies, using \tech{MLFlow}, \tech{Python}, \tech{Pandas}, and \tech{Scikit-learn}. Structured data pipeline for Training and Inference with \tech{ECS} and \tech{Fargate} for scalability and reliability.
+        Developed comprehensive loan delinquency prediction system using \tech{XGBoost} models to calculate probability-weighted risk scores across three IFRS 9-compliant stages: Current/Performing, Early/Severe Delinquency, and Default/Charged-off.
+    }
+    \achievement{
+        Implemented sophisticated risk scoring algorithm that considers multiple delinquency probabilities over 3-month windows, enabling proactive risk management and early intervention strategies.
+    }
+    \achievement{
+        Built Risk Radar dashboard with tenant risk leaderboard, automated alerts, and drill-down capabilities, providing actionable insights for loan servicing teams and portfolio managers.
     }
 }
 \experience
-{\faIcon{lock} Sentiment Analysis on Twitter}
-{LogMeIn}
-{Jan 2024}{Present}
+{\faIcon{lock} Loan Monitoring System}
+{LoanPro}
+{Jan 2024}{Dec 2024}
 {
     \achievement{
-        Created a real-time sentiment analysis tool for social media, allowing for better-informed marketing campaigns and customer service responses.
+        Designed and deployed a system to monitor loan creation, cluster user behavior, and identify anomalies, using \tech{MLFlow}, \tech{Python}, \tech{Pandas}, and \tech{Scikit-learn}. Structured data pipeline for Training and Inference with \tech{ECS} and \tech{Fargate} for scalability and reliability.
     }
 }
 \experience
@@ -227,8 +247,7 @@
 {Jan 2024}{Apr 2024}
 {
     \achievement{
-        Implemented a Python package to predict customer churn, 
-        adhering to PEP8 standards, and incorporating best practices for modularity, documentation, and testing.
+        Python package for customer churn prediction, adhering to PEP8 standards with best practices for modularity, documentation, and testing.
     }
 }
 \experience
@@ -237,8 +256,7 @@
 {Jan 2024}{Apr 2024}
 {
     \achievement{
-        Developed an end-to-end machine learning pipeline for short-term rental price prediction in NYC, 
-        including data fetching, validation, training, and deployment, automating retraining on a weekly basis.
+        End-to-end ML pipeline for NYC rental price prediction with automated weekly retraining and deployment.
     }
 }
 \experience
@@ -247,22 +265,12 @@
 {Jan 2024}{Apr 2024}
 {
     \achievement{
-        Set up automated processes to ingest data, score, re-train, and re-deploy ML models for risk assessment, ensuring models remained accurate and up-to-date.
-    }
-}
-\experience
-{\repository{Face Generation using GANs}{https://github.com/steelcolosus/face.generation}}
-{Personal}
-{Jan 2017}{Apr 20217}
-{
-    \achievement{
-        Built and trained a custom GAN architecture on the CelebA dataset to generate realistic human faces, utilizing advanced techniques like DCGAN, CycleGAN, and StyleGAN.
+        Automated ML model lifecycle management with data ingestion, scoring, retraining, and deployment.
     }
 }
 \vspace{8pt}
 
-
-% ----- Technical Projects -----
+% ----- Speaking Engagements -----
 \section{Speaking Engagements}
 
 \experience
@@ -271,7 +279,7 @@
 {}{March 2019}
 {
     \achievement{
-        Discussed how to implement a neural network without external ML libraries, showcasing fundamental AI concepts with raw Python.
+        Implemented neural network without external ML libraries, showcasing fundamental AI concepts with raw Python.
     }
 }
 \experience
@@ -280,7 +288,7 @@
 {}{Oct 2018}
 {
     \achievement{
-        How to implement a custom RNN-based model to generate fake threads of posts and comments, trained on a dataset from the "Velocidad Maxima" website.
+        Custom RNN-based model to generate fake social media threads, trained on "Velocidad Maxima" dataset.
     }
 }
 \experience
@@ -289,7 +297,7 @@
 {}{Jul 2018}
 {
     \achievement{
-        Presented on the evolution of text translation and the potential use of neural translation models to translate Mayan dialects, exploring language preservation techniques.
+        Text translation evolution and neural models for Mayan dialect translation and language preservation.
     }
 }
 \experience
@@ -298,7 +306,7 @@
 {}{May 2018}
 {
     \achievement{
-        Delivered a keynote on the implementation of Generative Adversarial Networks (GANs) for generating fake facial images, demonstrating the versatility of GANs in various applications.
+        Keynote on GAN implementation for facial image generation, demonstrating GAN versatility across applications.
     }
 }
 
