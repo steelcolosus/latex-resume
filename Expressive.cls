@@ -15,6 +15,7 @@
 
 %% Add support for custom coloring
 \RequirePackage{xcolor}
+\definecolor{secondarytext}{gray}{0.50}
 
 %% Add support for many custom icons.
 \RequirePackage{fontawesome5}
@@ -47,22 +48,22 @@
 
 %% Add support for nuanced list formatting
 \RequirePackage{enumitem}
-\setlist{nosep,topsep=0pt,leftmargin=12pt}
+\setlist{topsep=1pt,itemsep=1pt,parsep=0pt,leftmargin=14pt}
 
 %% Add support for customized section headers
 %% https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/titlesec/titlesec.pdf
 \RequirePackage{titlesec}
 % Section Formatting
 \titleformat{\section}
-{\Large\scshape\raggedright}  % Shape
+{\large\scshape\raggedright}  % Shape
 {}
 {0em}
 {}
 [\titlerule]
 \titlespacing{\section}
 {0pt}  % `left`: Left Margin
-{0pt}  % `before-sep`: Vertical space before the title
-{5pt}  % `after-sep`: Vertical space after the title
+{5pt}  % `before-sep`: Vertical space before the title
+{4pt}  % `after-sep`: Vertical space after the title
 [0pt]  % `right-sep`: Right margin (affected by `hang`, `block`, and `display`)
 % Sub-Section Formatting
 \titleformat{\subsection}
@@ -113,18 +114,18 @@
 \newcommand{\certificate}[2]{\href{#2}{#1}}
 % Experience/Achievements
 \newcommand{\tech}[1]{\textbf{#1}}
-\newcommand{\role}[2]{\textbf{#2 | \emph{#1}}}
+\newcommand{\role}[2]{\textbf{#2} --- \textcolor{secondarytext}{\textbf{\emph{#1}}}}
 \newcommand{\subrole}[4]{\emph{#1 (#2 - #3)} #4}
 \newcommand{\tenure}[2]{\textsc{#1} - \textsc{#2}}
 \newcommand{\achievement}[1]{%
     \begin{itemize}
-        \small{\item #1}
+        \item #1
     \end{itemize}
 }
 \newcommand{\experience}[5]{%
     \noindent\role{#1}{#2}\hfill\tenure{#3}{#4}\par
     #5
-    \vspace{7.5pt}
+    \vspace{6pt}
 }
 
 %% ----- Four Required Configurations -----

@@ -1,6 +1,51 @@
 \RequirePackage{etex}
 \documentclass{ExpressiveResume}
 
+\newcommand{\projectentry}[5]{%
+    \noindent\begin{tabular*}{\textwidth}{@{}L{5.45in}@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} --- \textcolor{secondarytext}{\textbf{\emph{#2}}} & {\small\textsc{#3}}
+    \end{tabular*}\par
+    \noindent #4\par
+    \noindent #5\par
+    \vspace{5pt}
+}
+
+\newcommand{\techtag}[1]{%
+    \tikz[baseline=(tag.base)]{
+        \node[
+            anchor=base,
+            rounded corners=1.4pt,
+            fill=gray!10,
+            draw=gray!35,
+            line width=0.25pt,
+            inner xsep=3pt,
+            inner ysep=2.5pt
+        ] (tag) {\scriptsize\ttfamily\textcolor{secondarytext}{#1}};
+    }%
+}
+\newcommand{\tagsep}{\hspace{2.5pt}}
+
+\newcommand{\talkentry}[4]{%
+    \noindent\begin{tabular*}{\textwidth}{@{}L{6.25in}@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} \textcolor{secondarytext}{\textperiodcentered\ \textbf{#2}} & \textsc{#4}
+    \end{tabular*}\par
+    \noindent\textcolor{secondarytext}{\emph{#3}}\par
+    \vspace{5pt}
+}
+
+\newcommand{\awardentry}[4]{%
+    \noindent\begin{tabular*}{\textwidth}{@{}L{6.25in}@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} \textcolor{secondarytext}{\textperiodcentered}\ \textbf{#2} --- \textcolor{secondarytext}{\textbf{\emph{#3}}} & \textsc{#4}
+    \end{tabular*}\par
+    \vspace{5pt}
+}
+
+\newcommand{\certentry}[2]{%
+    \textbf{#1}\par
+    \vspace{0.25pt}
+    {\footnotesize\textcolor{secondarytext}{#2}}
+}
+
 % ----- Resume -----
 \begin{document}
 
@@ -16,6 +61,7 @@
     % qrcode=./images/qr.png,
     fixobjectivespacing=true
 ]
+
 \begin{flushleft}
     Machine Learning Engineer with 10+ years of experience spanning full-stack development, data engineering, and AI/ML solutions across financial services, social media, and enterprise applications.
     Expert in building end-to-end ML pipelines, deep learning, NLP, computer vision, and predictive analytics.
@@ -23,17 +69,18 @@
     Strong background in technical innovation and business impact, delivering production-ready AI solutions with regulatory compliance.
 \end{flushleft}
 
-% ----- Education -----
-\section{Education}
-
-\experience
-{Engineering Degree}
-{Computer Systems Engineering}
-{Jan 2005}{Sept 2011}
-{
-    \noindent Universidad De San Carlos De Guatemala 
-}
-\vspace{8pt}
+% ----- Skills -----
+\section{Skills}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}L{1.45in}@{\hspace{0.08in}}L{5.70in}@{}}
+\textbf{AI/ML \& LLMs} & XGBoost \textperiodcentered\ Scikit-learn \textperiodcentered\ TensorFlow \textperiodcentered\ Keras \textperiodcentered\ MLflow \textperiodcentered\ Pandas \textperiodcentered\ DVC \textperiodcentered\ Weights \& Biases \textperiodcentered\ LlamaIndex \textperiodcentered\ LangChain \textperiodcentered\ Ollama \textperiodcentered\ Chainlit \\
+\textbf{Retrieval \& Data} & OpenSearch \textperiodcentered\ PostgreSQL \textperiodcentered\ Redis \textperiodcentered\ RethinkDB \textperiodcentered\ DynamoDB \textperiodcentered\ Redshift \textperiodcentered\ ETL pipelines \textperiodcentered\ API integrations \\
+\textbf{Backend \& Web} & Python \textperiodcentered\ Java \textperiodcentered\ TypeScript \textperiodcentered\ JavaScript \textperiodcentered\ SQL \textperiodcentered\ Node.js \textperiodcentered\ FastAPI \textperiodcentered\ NestJS \textperiodcentered\ Spring Boot \textperiodcentered\ Django \textperiodcentered\ Flask \textperiodcentered\ React \textperiodcentered\ SolidJS \\
+\textbf{Cloud \& MLOps} & AWS ECS \textperiodcentered\ Fargate \textperiodcentered\ Lambda \textperiodcentered\ Docker \textperiodcentered\ Kubernetes \textperiodcentered\ Terraform \textperiodcentered\ Jenkins \textperiodcentered\ CloudFormation \textperiodcentered\ Ansible \textperiodcentered\ GitHub Actions \\
+\textbf{Finance \& Risk} & IFRS 9 \textperiodcentered\ Expected Credit Loss \textperiodcentered\ regulatory reporting \textperiodcentered\ risk modeling \textperiodcentered\ loan servicing analytics \\
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\vspace{7pt}
 
 % ----- Work Experience -----
 \section{Work Experience}
@@ -44,36 +91,25 @@
 {Jun 2022}{Present}
 {
     \achievement{
-        Implemented a Loan Creation Monitor, cluster user behavior, and identify anomalies, 
-        improving tenant targeting.
+        Owned production AI/ML delivery for loan servicing and portfolio-risk workflows, translating risk policy, servicing data, and analyst needs into deployed systems.
     }
     \achievement{
-    Developed an anomaly detection system that reduced tenant noise data by 25\%, 
-    filtering irrelevant events allowing the business to focus on critical insights.
+        Led model and data architecture across risk intelligence, anomaly detection, retrieval pipelines, and conversational workflows, balancing explainability, reliability, and regulated financial requirements.
     }
     \achievement{
-        Created per-tenant smart threshold calculation, considering data distribution, 
-        multiple modes, skewness, and kurtosis, optimizing sensitivity for better decision-making.
+        Delivered portfolio-risk and monitoring products aligned with IFRS 9/ECL workflows, enabling earlier intervention and operational visibility for servicing teams.
     }
     \achievement{
-        Built automated model workflows with continuous training (CT) and model validation 
-        to monitor online model performance, preventing model degradation.
+        Established reusable OpenSearch/API data normalization patterns for nested loan, payment, and servicing records, improving model-readiness across multiple AI systems.
     }
     \achievement{
-        Developed a custom data pipeline for training and inference, 
-        using ECS and Fargate for scalability and reliability.
+        Improved operational signal quality through anomaly detection and tenant-specific thresholding, reducing noisy events by 25\% and sharpening portfolio monitoring.
     }
     \achievement{
-        Implemented a custom LLM AI assistant to summarize and analyze loan data and provide insights and recommendations.
+        Built deployment and validation workflows across \tech{MLflow}, \tech{ECS}, and \tech{Fargate} to support repeatable training, inference, monitoring, and model reliability.
     }
     \achievement{
-        Developed Risk Radar project using \tech{XGBoost} to predict loan delinquency across 3-month windows, creating comprehensive risk scores that align with IFRS 9 regulatory requirements for Expected Credit Loss (ECL) provisioning.
-    }
-    \achievement{
-        Built predictive models calculating probability-weighted risk scores across three delinquency stages (Current, Early/Severe Delinquency, Default), enabling proactive risk management and reducing potential losses by identifying high-risk loans before default.
-    }
-    \achievement{
-        Created Risk Radar dashboard with tenant risk leaderboard and early warning alerts, improving portfolio oversight and enabling data-driven decision making for loan servicing teams.
+        Delivered analyst-facing AI capabilities with structured outputs, retrieval grounding, and conversational interfaces, improving access to portfolio insights and recommendations.
     }
 }
 \experience
@@ -82,23 +118,13 @@
 {Aug 2021}{Jun 2022}
 {
     \achievement{
-        Led infrastructure, architecture, and CI/CD pipelines for back-end and front-end solutions, 
-        improving deployment times by 30\%.
+        Led backend, frontend, infrastructure, and CI/CD architecture for training and scheduling platforms, improving deployment times by 30\%.
     }
     \achievement{
-        Developed scheduling and reservation core system for training classes, 
-        improving scheduling by 80\%.
+        Developed core scheduling and reservation systems for training classes, improving scheduling efficiency by 80\%.
     }
     \achievement{
-        Built custom generic calendar invite logic for scheduling, improving integration and user convenience.
-    }
-    \achievement{
-        Implemented a chatbot using Amazon Lex, which automated 40\% 
-        of customer inquiries and improved user interaction efficiency.
-    }
-    \achievement{
-        Led and managed back-end and infrastructure projects, 
-        ensuring scalable architecture and seamless integration with existing systems.
+        Implemented Amazon Lex chatbot workflows that automated 40\% of customer inquiries and improved user interaction efficiency.
     }
 }
 \experience
@@ -107,13 +133,10 @@
 {Apr 2016}{Dec 2021}
 {
     \achievement{
-        Developed infrastructure for data integration and ETL with multiple sources, improving data processing capabilities.
+        Built data integration infrastructure and ETL microservices across multiple sources, improving scalability and processing reliability.
     }
     \achievement{
-        Built microservices for custom ETL solutions, enhancing scalability and reliability.
-    }
-    \achievement{
-        Implemented ML algorithms for product enhancements, leading to 20\% increase in prediction accuracy.
+        Implemented ML algorithms for product enhancements, improving prediction accuracy by 20\%.
     }
 }
 \experience
@@ -128,187 +151,119 @@
         Optimized back-end infrastructure and implemented AWS solutions, reducing infrastructure costs by 30\%.
     }
 }
-\vspace{12pt}
 
-% ----- Skills -----
-\section{Skills}
-\begin{itemize}
-    \item \textbf{Programming Languages:} Python, Java, TypeScript, JavaScript, SQL
-    \item \textbf{Web \& Backend Frameworks:} Node.js, React, SolidJS, NestJS, Spring Boot, FastAPI, Django, Flask
-    \item \textbf{Machine Learning \& AI:} XGBoost, Scikit-Learn, TensorFlow, Keras, MLFlow, Pandas, DVC, Weights\& Biases, LlamaIndex
-    \item \textbf{Cloud \& Infrastructure:} AWS (ECS, Fargate, Lambda), Docker, Kubernetes, Terraform, Jenkins, CloudFormation, Ansible
-    \item \textbf{Databases \& Storage:} PostgreSQL, Redis, RethinkDB, DynamoDB, Redshift
-    \item \textbf{Financial \& Compliance:} IFRS 9, Expected Credit Loss (ECL), Regulatory Reporting, Risk Modeling
-    \item \textbf{Development Tools:} Git, GitHub Actions, RabbitMQ, Netflix OSS, Amazon Lex
-\end{itemize}
+% ----- Selected AI and ML Systems -----
+\section{Selected AI / ML Projects}
 
-\pagebreak
+\projectentry
+{Risk Radar}
+{Loan delinquency prediction system}
+{LoanPro $\cdot$ Jan 2025 -- Present}
+{Built probability-weighted delinquency models across Current, Early/Severe Delinquency, and Default stages under IFRS 9/ECL; shipped tenant risk leaderboards, drill-down analysis, and early-warning alerts for portfolio managers and servicing teams.}
+{\techtag{XGBoost}\tagsep\techtag{Python}\tagsep\techtag{Pandas}\tagsep\techtag{IFRS 9/ECL}\tagsep\techtag{MLflow}}
+
+\projectentry
+{Loan Health Intelligence}
+{AI-powered credit health assessment platform}
+{LoanPro $\cdot$ Feb -- Apr 2025}
+{Delivered an AI loan-risk platform with structured credit health assessments, OpenSearch and API retrieval, schema-enforced outputs, and explainable recommendations.}
+{\techtag{LlamaIndex}\tagsep\techtag{Ollama}\tagsep\techtag{OpenSearch}\tagsep\techtag{Chainlit}\tagsep\techtag{Pydantic}}
+
+\projectentry
+{Search Analytics Copilot}
+{Conversational OpenSearch analytics assistant}
+{LoanPro $\cdot$ May -- Aug 2025}
+{Built function-calling assistants for index discovery, metadata inspection, JSON querying, visual trend generation, loan-context retrieval, and API fallback.}
+{\techtag{LangChain}\tagsep\techtag{LlamaIndex}\tagsep\techtag{Chainlit}\tagsep\techtag{OpenSearch}\tagsep\techtag{Matplotlib}}
+
+\projectentry
+{Loan Monitor}
+{Loan creation anomaly monitoring}
+{LoanPro $\cdot$ 2024}
+{Designed and deployed a loan-creation monitoring system that clusters user behavior, flags anomalies, and supports per-tenant targeting decisions.}
+{\techtag{Python}\tagsep\techtag{MLflow}\tagsep\techtag{Scikit-learn}\tagsep\techtag{ECS}\tagsep\techtag{Fargate}}
+
+\projectentry
+{LLM Copilot Lab}
+{Agent benchmarking and assistant frontend}
+{LoanPro $\cdot$ Sep 2024 -- Jan 2025}
+{Benchmarked agent frameworks, model backends, embeddings, and tool-calling behavior; delivered an SSR-capable copilot frontend with Chainlit widget integration.}
+{\techtag{LangChain}\tagsep\techtag{LlamaIndex}\tagsep\techtag{llama-cpp}\tagsep\techtag{TypeScript}\tagsep\techtag{SolidJS}}
+
+\projectentry
+{ML Pipeline Studio}
+{Churn, Rental Pricing, and Dynamic-Risk Pipelines}
+{Personal $\cdot$ 2024}
+{Built modular ML pipelines for churn prediction, automated weekly rental-price retraining, and full lifecycle management across ingestion, scoring, retraining, and deployment.}
+{\techtag{Python}\tagsep\techtag{MLflow}\tagsep\techtag{CI/CD}\tagsep\techtag{model monitoring}}
+
+% ------ Awards -----
+\section{Awards}
+
+\awardentry
+{First Place}
+{LoanPro Hackathon}
+{Risk Radar}
+{Jan 2025}
+\awardentry
+{First Place}
+{LoanPro Hackathon}
+{Loan Monitoring}
+{Apr 2024}
+\awardentry
+{First Place \& Developers' Choice}
+{LogMeIn Hackathon}
+{LSTM churn prediction}
+{Jul 2018}
+
 % ------ Certifications -----
-\section{Awards and Certificates}
+\section{Certifications -- Udacity Nanodegrees}
+
+\vspace{1pt}
+\noindent\begin{tabular}{@{}L{3.42in}@{\hspace{0.25in}}L{3.42in}@{}}
+\certentry{\certificate{Machine Learning DevOps Engineer}{https://www.udacity.com/certificate/e/f46ae562-cec7-11ed-b982-8f5005d0f612}}{CI/CD \textperiodcentered\ FastAPI \textperiodcentered\ MLflow \textperiodcentered\ Weights \& Biases}
+&
+\certentry{Cloud DevOps Engineer}{CloudFormation \textperiodcentered\ Ansible \textperiodcentered\ Jenkins \textperiodcentered\ Kubernetes}
+\\[16pt]
+\certentry{Artificial Intelligence}{Search \textperiodcentered\ planning \textperiodcentered\ pattern recognition}
+&
+\certentry{\certificate{Deep Learning}{https://www.udacity.com/certificate/e/67cab9d0-b612-11e7-b918-cbf0cf6d0985}}{CNNs \textperiodcentered\ RNNs \textperiodcentered\ GANs \textperiodcentered\ sentiment analysis}
+\end{tabular}
+\vspace{3pt}
+
+% ----- Education -----
+\section{Education}
 
 \experience
-{First Place}
-{Hackathon/LoanPro - Risk Radar}
-{}{Jan 2025}
+{Engineering Degree}
+{Computer Systems Engineering}
+{Jan 2005}{Sept 2011}
 {
-    \achievement{
-        Risk Radar: Advanced loan delinquency prediction system using XGBoost with IFRS 9 compliance, featuring probability-weighted risk scoring and automated portfolio monitoring dashboard.
-    }
+    \noindent Universidad De San Carlos De Guatemala
 }
-
-\experience
-{First Place}
-{Hackathon/LoanPro - Loan Monitoring}
-{}{Apr 2024}
-{
-    \achievement{
-        Loan monitoring system that utilized clustering and anomaly detection techniques to improve tenant targeting.
-    }
-}
-
-\experience
-{First Place}
-{Hackathon/LogMeIn}
-{}{Jul 2018}
-{
-    \achievement{
-        Created an LSTM-based neural network to predict customer churn, 
-        leveraging advanced recurrent neural network architectures to solve critical business problems related to customer retention.
-        Also voted as developers' choice.
-    }
-}
-\experience
-{\certificate{Machine Learning DevOps Engineer}{https://www.udacity.com/certificate/e/f46ae562-cec7-11ed-b982-8f5005d0f612}}
-{Nano Degree}
-{Jan 2022}{Apr 2022}
-{
-    \achievement{
-        Production-ready ML pipelines, automated workflows with \tech{CI/CD}, \tech{FastAPI}, \tech{MLFlow}, \tech{Weights\&Biases}, and model performance tracking.
-    }
-}
-\experience
-{Cloud DevOps Engineer}
-{Nano Degree}
-{Jul 2019}{Aug 2020}
-{
-    \achievement{
-        Infrastructure as code (IaC) with \tech{CloudFormation} and \tech{Ansible}, \tech{CI/CD} pipelines with \tech{Jenkins}, and \tech{Kubernetes} microservices.
-    }
-}
-\experience
-{Artificial Intelligence Nanodegree}
-{Nano Degree}
-{Jan 2018}{Jul 2018}
-{
-    \achievement{
-        AI algorithms, search optimization, planning, and pattern recognition.
-    }
-}
-\experience
-{\certificate{Deep Learning Nanodegree}{https://www.udacity.com/certificate/e/67cab9d0-b612-11e7-b918-cbf0cf6d0985}}
-{Nano Degree}
-{Jul 2017}{Aug 2017}
-{
-    \achievement{         
-        Image classification, sentiment analysis, and face generation using CNNs, RNNs, and GANs.
-    }
-}
-\vspace{8pt}
-
-% ----- Technical Projects -----
-\section{Technical Projects}
-
-\experience
-{\faIcon{lock} Risk Radar - Loan Delinquency Prediction System}
-{LoanPro}
-{Jan 2025}{Present}
-{
-    \achievement{
-        Developed comprehensive loan delinquency prediction system using \tech{XGBoost} models to calculate probability-weighted risk scores across three IFRS 9-compliant stages: Current/Performing, Early/Severe Delinquency, and Default/Charged-off.
-    }
-    \achievement{
-        Implemented sophisticated risk scoring algorithm that considers multiple delinquency probabilities over 3-month windows, enabling proactive risk management and early intervention strategies.
-    }
-    \achievement{
-        Built Risk Radar dashboard with tenant risk leaderboard, automated alerts, and drill-down capabilities, providing actionable insights for loan servicing teams and portfolio managers.
-    }
-}
-\experience
-{\faIcon{lock} Loan Monitoring System}
-{LoanPro}
-{Jan 2024}{Dec 2024}
-{
-    \achievement{
-        Designed and deployed a system to monitor loan creation, cluster user behavior, and identify anomalies, using \tech{MLFlow}, \tech{Python}, \tech{Pandas}, and \tech{Scikit-learn}. Structured data pipeline for Training and Inference with \tech{ECS} and \tech{Fargate} for scalability and reliability.
-    }
-}
-\experience
-{\repository{Predict Customer Churn}{https://github.com/steelcolosus/ml-devops-predict-customer-churn}}
-{Personal Project}
-{Jan 2024}{Apr 2024}
-{
-    \achievement{
-        Python package for customer churn prediction, adhering to PEP8 standards with best practices for modularity, documentation, and testing.
-    }
-}
-\experience
-{\repository{ML Pipeline for Rental Price Prediction}{https://github.com/steelcolosus/ml-devops-build-ml-pipeline-for-short-term-rental-prices}}
-{Personal Project}
-{Jan 2024}{Apr 2024}
-{
-    \achievement{
-        End-to-end ML pipeline for NYC rental price prediction with automated weekly retraining and deployment.
-    }
-}
-\experience
-{\repository{Dynamic Risk Assessment System}{https://github.com/steelcolosus/ML_DevOps_NG/tree/master/project_dynamic_risk_assesment}}
-{Personal Project}
-{Jan 2024}{Apr 2024}
-{
-    \achievement{
-        Automated ML model lifecycle management with data ingestion, scoring, retraining, and deployment.
-    }
-}
-\vspace{12pt}
 
 % ----- Speaking Engagements -----
 \section{Speaking Engagements}
 
-\experience
-{Neural Network from scratch}
-{FaceBook dev Circles, Guatemala}
-{}{March 2019}
-{
-    \achievement{
-        Implemented neural network without external ML libraries, showcasing fundamental AI concepts with raw Python.
-    }
-}
-\experience
-{RNNs and Sequence to Sequence Model}
-{FaceBook dev Circles, Guatemala}
-{}{Oct 2018}
-{
-    \achievement{
-        Custom RNN-based model to generate fake social media threads, trained on "Velocidad Maxima" dataset.
-    }
-}
-\experience
+\talkentry
+{Neural Networks from Scratch}
+{Facebook Dev Circles Guatemala}
+{Building a working network in raw Python with no ML libraries.}
+{Mar 2019}
+\talkentry
+{RNNs and Sequence-to-Sequence Models}
+{Facebook Dev Circles Guatemala}
+{Generating social-media threads from a Spanish-language dataset.}
+{Oct 2018}
+\talkentry
 {Neural Machine Translation}
 {Mayan Linguistic Conference, Guatemala}
-{}{Jul 2018}
-{
-    \achievement{
-        Text translation evolution and neural models for Mayan dialect translation and language preservation.
-    }
-}
-\experience
-{Generative Adversarial Networks ( GAN )}
-{Google IO Extended, Guatemala}
-{}{May 2018}
-{
-    \achievement{
-        Keynote on GAN implementation for facial image generation, demonstrating GAN versatility across applications.
-    }
-}
+{Applying NMT concepts toward Mayan dialect preservation.}
+{Jul 2018}
+\talkentry
+{Generative Adversarial Networks}
+{Google IO Extended Guatemala (keynote)}
+{Facial image generation and applied generative modeling.}
+{May 2018}
 
 \end{document}
