@@ -1,6 +1,10 @@
 \RequirePackage{etex}
 \documentclass{ExpressiveResume}
 
+\usepackage{tcolorbox}
+
+
+
 \newcommand{\projectentry}[5]{%
     \noindent\begin{tabular*}{\textwidth}{@{}L{5.45in}@{\extracolsep{\fill}}r@{}}
         \textbf{#1} --- \textcolor{secondarytext}{\textbf{\emph{#2}}} & {\small\textsc{#3}}
@@ -10,6 +14,21 @@
     \vspace{5pt}
 }
 
+% Define a custom command for a reusable tag style
+\newcommand{\mytag}[1]{%
+  \tcbox[
+		on line, 
+		boxsep=0pt, 
+		left=3pt, 
+		right=3pt, 
+		top=2pt, 
+		bottom=2pt,
+		colback=gray!10, 
+		colframe=gray!50, 
+		arc=1pt, 
+		fontupper=\small\ttfamily\textcolor{secondarytext}{#1}
+	]%
+}
 \newcommand{\techtag}[1]{%
     \tikz[baseline=(tag.base)]{
         \node[
@@ -23,7 +42,7 @@
         ] (tag) {\scriptsize\ttfamily\textcolor{secondarytext}{#1}};
     }%
 }
-\newcommand{\tagsep}{\hspace{2.5pt}}
+\newcommand{\tagsep}{\hspace{3pt}}
 
 \newcommand{\talkentry}[4]{%
     \noindent\begin{tabular*}{\textwidth}{@{}L{6.25in}@{\extracolsep{\fill}}r@{}}
@@ -62,25 +81,15 @@
     fixobjectivespacing=true
 ]
 
-\begin{flushleft}
-    Machine Learning Engineer with 10+ years of experience spanning full-stack development, data engineering, and AI/ML solutions across financial services, social media, and enterprise applications.
-    Expert in building end-to-end ML pipelines, deep learning, NLP, computer vision, and predictive analytics.
-    Proven leader in architecting scalable cloud infrastructure and DevOps practices that reduce operational costs by 30\%.
-    Strong background in technical innovation and business impact, delivering production-ready AI solutions with regulatory compliance.
-\end{flushleft}
+\begin{center}
+    \textbf{Backend \& Machine Learning Engineer \textbar\ Python, Data Pipelines \& AWS}
+\end{center}
 
-% ----- Skills -----
-\section{Skills}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabular}{@{}L{1.45in}@{\hspace{0.08in}}L{5.70in}@{}}
-\textbf{AI/ML \& LLMs} & XGBoost \textperiodcentered\ Scikit-learn \textperiodcentered\ TensorFlow \textperiodcentered\ Keras \textperiodcentered\ MLflow \textperiodcentered\ Pandas \textperiodcentered\ DVC \textperiodcentered\ Weights \& Biases \textperiodcentered\ LlamaIndex \textperiodcentered\ LangChain \textperiodcentered\ Ollama \textperiodcentered\ Chainlit \\
-\textbf{Retrieval \& Data} & OpenSearch \textperiodcentered\ PostgreSQL \textperiodcentered\ Redis \textperiodcentered\ RethinkDB \textperiodcentered\ DynamoDB \textperiodcentered\ Redshift \textperiodcentered\ ETL pipelines \textperiodcentered\ API integrations \\
-\textbf{Backend \& Web} & Python \textperiodcentered\ Java \textperiodcentered\ TypeScript \textperiodcentered\ JavaScript \textperiodcentered\ SQL \textperiodcentered\ Node.js \textperiodcentered\ FastAPI \textperiodcentered\ NestJS \textperiodcentered\ Spring Boot \textperiodcentered\ Django \textperiodcentered\ Flask \textperiodcentered\ React \textperiodcentered\ SolidJS \\
-\textbf{Cloud \& MLOps} & AWS ECS \textperiodcentered\ Fargate \textperiodcentered\ Lambda \textperiodcentered\ Docker \textperiodcentered\ Kubernetes \textperiodcentered\ Terraform \textperiodcentered\ Jenkins \textperiodcentered\ CloudFormation \textperiodcentered\ Ansible \textperiodcentered\ GitHub Actions \\
-\textbf{Finance \& Risk} & IFRS 9 \textperiodcentered\ Expected Credit Loss \textperiodcentered\ regulatory reporting \textperiodcentered\ risk modeling \textperiodcentered\ loan servicing analytics \\
-\end{tabular}
-\renewcommand{\arraystretch}{1}
-\vspace{7pt}
+\begin{flushleft}
+    Engineer with 10+ years of experience across backend development, data engineering, and production AI/ML systems in financial services, social media, and enterprise applications.
+    Owns data and model architecture from ingestion and normalization through training, inference, and monitoring on AWS.
+    Experienced in microservices, multi-source ETL, cloud infrastructure, and CI/CD.
+\end{flushleft}
 
 % ----- Work Experience -----
 \section{Work Experience}
@@ -91,25 +100,22 @@
 {Jun 2022}{Present}
 {
     \achievement{
-        Owned production AI/ML delivery for loan servicing and portfolio-risk workflows, translating risk policy, servicing data, and analyst needs into deployed systems.
+        Built production data and model pipelines with \tech{Python}, \tech{Pandas}, and \tech{scikit-learn} for loan monitoring and anomaly detection, translating servicing data and analyst needs into deployed systems.
     }
     \achievement{
-        Led model and data architecture across risk intelligence, anomaly detection, retrieval pipelines, and conversational workflows, balancing explainability, reliability, and regulated financial requirements.
+        Led data and model architecture across risk intelligence, anomaly detection, retrieval pipelines, and conversational workflows, balancing explainability and reliability in financial services.
     }
     \achievement{
-        Delivered portfolio-risk and monitoring products aligned with IFRS 9/ECL workflows, enabling earlier intervention and operational visibility for servicing teams.
+        Established reusable OpenSearch/API normalization pipelines for nested loan, payment, and servicing records, improving model-readiness across multiple AI systems.
     }
     \achievement{
-        Established reusable OpenSearch/API data normalization patterns for nested loan, payment, and servicing records, improving model-readiness across multiple AI systems.
+        Built repeatable training, inference, validation, and monitoring workflows with \tech{MLflow} and \tech{AWS ECS/Fargate} to support production model reliability.
     }
     \achievement{
-        Improved operational signal quality through anomaly detection and tenant-specific thresholding, reducing noisy events by 25\% and sharpening portfolio monitoring.
+        Reduced noisy monitoring events by 25\% through anomaly detection and tenant-specific thresholding, improving operational signal quality.
     }
     \achievement{
-        Built deployment and validation workflows across \tech{MLflow}, \tech{ECS}, and \tech{Fargate} to support repeatable training, inference, monitoring, and model reliability.
-    }
-    \achievement{
-        Delivered analyst-facing AI capabilities with structured outputs, retrieval grounding, and conversational interfaces, improving access to portfolio insights and recommendations.
+        Delivered portfolio-risk and monitoring products aligned with IFRS 9/ECL workflows, including retrieval-grounded analyst tools and explainable recommendations.
     }
 }
 \experience
@@ -118,7 +124,7 @@
 {Aug 2021}{Jun 2022}
 {
     \achievement{
-        Led backend, frontend, infrastructure, and CI/CD architecture for training and scheduling platforms, improving deployment times by 30\%.
+        Led backend, infrastructure, and CI/CD architecture for training and scheduling platforms, improving deployment times by 30\%.
     }
     \achievement{
         Developed core scheduling and reservation systems for training classes, improving scheduling efficiency by 80\%.
@@ -133,7 +139,7 @@
 {Apr 2016}{Dec 2021}
 {
     \achievement{
-        Built data integration infrastructure and ETL microservices across multiple sources, improving scalability and processing reliability.
+        Architected multi-source data integration and ETL microservices, including live-data streaming, improving scalability and processing reliability.
     }
     \achievement{
         Implemented ML algorithms for product enhancements, improving prediction accuracy by 20\%.
@@ -152,8 +158,28 @@
     }
 }
 
-% ----- Selected AI and ML Systems -----
-\section{Selected AI / ML Projects}
+% ----- Skills -----
+\section{Skills}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}L{1.45in}@{\hspace{0.08in}}L{5.70in}@{}}
+\textbf{Backend \& APIs} & Python \textperiodcentered\ FastAPI \textperiodcentered\ Django \textperiodcentered\ Flask \textperiodcentered\ SQL \textperiodcentered\ Java \textperiodcentered\ Spring Boot \textperiodcentered\ Node.js \textperiodcentered\ NestJS \textperiodcentered\ TypeScript \\
+\textbf{Data \& Pipelines} & Pandas \textperiodcentered\ ETL pipelines \textperiodcentered\ API integrations \textperiodcentered\ PostgreSQL \textperiodcentered\ OpenSearch \textperiodcentered\ Redis \textperiodcentered\ DynamoDB \textperiodcentered\ Redshift \\
+\textbf{ML \& MLOps} & Scikit-learn \textperiodcentered\ XGBoost \textperiodcentered\ TensorFlow \textperiodcentered\ Keras \textperiodcentered\ MLflow \textperiodcentered\ DVC \textperiodcentered\ Weights \& Biases \textperiodcentered\ model monitoring \\
+\textbf{Cloud \& DevOps} & AWS ECS \textperiodcentered\ Fargate \textperiodcentered\ Lambda \textperiodcentered\ Docker \textperiodcentered\ Kubernetes \textperiodcentered\ Terraform \textperiodcentered\ CloudFormation \textperiodcentered\ Ansible \textperiodcentered\ Jenkins \textperiodcentered\ GitHub Actions \\
+\textbf{LLM \& Retrieval} & LlamaIndex \textperiodcentered\ LangChain \textperiodcentered\ Ollama \textperiodcentered\ Chainlit \textperiodcentered\ Pydantic \\
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\vspace{7pt}
+
+% ----- Selected Backend, Data and ML Systems -----
+\section{Selected Data / ML Projects}
+
+\projectentry
+{Loan Monitor}
+{Loan creation anomaly monitoring}
+{LoanPro $\cdot$ 2024}
+{Designed and deployed a loan-creation monitoring system that clusters user behavior and flags anomalies; supported per-tenant targeting with repeatable training and inference on AWS ECS/Fargate.}
+{\techtag{Python}\tagsep\techtag{Pandas}\tagsep\techtag{MLflow}\tagsep\techtag{Scikit-learn}\tagsep\techtag{ECS}\tagsep\techtag{Fargate}}
 
 \projectentry
 {Risk Radar}
@@ -161,6 +187,13 @@
 {LoanPro $\cdot$ Jan 2025 -- Present}
 {Built probability-weighted delinquency models across Current, Early/Severe Delinquency, and Default stages under IFRS 9/ECL; shipped tenant risk leaderboards, drill-down analysis, and early-warning alerts for portfolio managers and servicing teams.}
 {\techtag{XGBoost}\tagsep\techtag{Python}\tagsep\techtag{Pandas}\tagsep\techtag{IFRS 9/ECL}\tagsep\techtag{MLflow}}
+
+\projectentry
+{ML Pipeline Studio}
+{Churn, Rental Pricing, and Dynamic-Risk Pipelines}
+{Personal $\cdot$ 2024}
+{Built modular ML pipelines for churn prediction, automated weekly rental-price retraining, and full lifecycle management across ingestion, scoring, retraining, and deployment.}
+{\techtag{Python}\tagsep\techtag{MLflow}\tagsep\techtag{CI/CD}\tagsep\techtag{model monitoring}}
 
 \projectentry
 {Loan Health Intelligence}
@@ -175,27 +208,6 @@
 {LoanPro $\cdot$ May -- Aug 2025}
 {Built function-calling assistants for index discovery, metadata inspection, JSON querying, visual trend generation, loan-context retrieval, and API fallback.}
 {\techtag{LangChain}\tagsep\techtag{LlamaIndex}\tagsep\techtag{Chainlit}\tagsep\techtag{OpenSearch}\tagsep\techtag{Matplotlib}}
-
-\projectentry
-{Loan Monitor}
-{Loan creation anomaly monitoring}
-{LoanPro $\cdot$ 2024}
-{Designed and deployed a loan-creation monitoring system that clusters user behavior, flags anomalies, and supports per-tenant targeting decisions.}
-{\techtag{Python}\tagsep\techtag{MLflow}\tagsep\techtag{Scikit-learn}\tagsep\techtag{ECS}\tagsep\techtag{Fargate}}
-
-\projectentry
-{LLM Copilot Lab}
-{Agent benchmarking and assistant frontend}
-{LoanPro $\cdot$ Sep 2024 -- Jan 2025}
-{Benchmarked agent frameworks, model backends, embeddings, and tool-calling behavior; delivered an SSR-capable copilot frontend with Chainlit widget integration.}
-{\techtag{LangChain}\tagsep\techtag{LlamaIndex}\tagsep\techtag{llama-cpp}\tagsep\techtag{TypeScript}\tagsep\techtag{SolidJS}}
-
-\projectentry
-{ML Pipeline Studio}
-{Churn, Rental Pricing, and Dynamic-Risk Pipelines}
-{Personal $\cdot$ 2024}
-{Built modular ML pipelines for churn prediction, automated weekly rental-price retraining, and full lifecycle management across ingestion, scoring, retraining, and deployment.}
-{\techtag{Python}\tagsep\techtag{MLflow}\tagsep\techtag{CI/CD}\tagsep\techtag{model monitoring}}
 
 % ------ Awards -----
 \section{Awards}
